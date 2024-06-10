@@ -1,16 +1,12 @@
 CC=				g++
 
-CFLAGS=			
-
-BUFFER_SIZE=	16
+CFLAGS=		-std=c++11
 
 NAME=			MultilayerPerceptron
 
 INCLUDES:=		-I ./includes/ 
 
 FILES=			./srcs/main.cpp						\
-				./srcs/Perceptron.cpp				\
-				./srcs/ActivationFunctions.cpp		\
 
 OBJS=			$(FILES:.cpp=.o)
 
@@ -19,16 +15,16 @@ LIB=
 $(NAME):  $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(INCLUDES) $(OBJS) $(LIB)
 
-%.o: %.c
-	$(CC) -c $(CFLAGS) $(INCLUDES) -D BUFFER_SIZE=$(BUFFER_SIZE) -o $@ $<
+%.o: %.cpp
+	$(CC) -c $(CFLAGS) $(INCLUDES) -o $@ $<
 
 all: $(NAME)
 
 clean:
 	@rm -rf $(OBJS)
 
-fclean:
+fclean: clean
 	@rm -rf $(OBJS)
-	@rm -rf $(NAME)
-re: fclean $(NAME)
+
+re: fclean $(NAME) clean
 

@@ -1,12 +1,13 @@
 #include "../includes/Matrix.hpp"
 #include "../includes/ActivationFunctions.hpp"
+#include "../includes/Perceptron.hpp"
+#include <cstdio>
 #include <iostream>
 #include <ostream>
 int main()
 {
-	ActivationFunction<int>a = ActivationFunction<int>("sigmoid");
-	a.activate(5);
-
-	std::cout << "Hello World" << std::endl;
+	ActivationFunction<double>a("sigmoid");
+	Perceptron<double>p("sigmoid");
+	std::cout << a.activate(3, false) << std::endl;
 
 }

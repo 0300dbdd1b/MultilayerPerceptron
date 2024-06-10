@@ -21,4 +21,12 @@ class Perceptron
 	
 };
 
+template  <typename T>
+Perceptron<T>::Perceptron(){}
+
+template <typename T>
+Perceptron<T>::Perceptron(const char *activation_fn)
+{
+	this->function = ActivationFunction<T>(activation_fn);
+}
 #endif
