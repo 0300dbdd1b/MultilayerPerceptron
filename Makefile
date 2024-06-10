@@ -1,6 +1,6 @@
 CC=				g++
 
-CFLAGS=			-Wall -Wextra -Werror
+CFLAGS=			
 
 BUFFER_SIZE=	16
 
@@ -8,9 +8,11 @@ NAME=			MultilayerPerceptron
 
 INCLUDES:=		-I ./includes/ 
 
-FILES=			./srcs/main.c\
+FILES=			./srcs/main.cpp						\
+				./srcs/Perceptron.cpp				\
+				./srcs/ActivationFunctions.cpp		\
 
-OBJS=			$(FILES:.c=.o)
+OBJS=			$(FILES:.cpp=.o)
 
 LIB=			
 

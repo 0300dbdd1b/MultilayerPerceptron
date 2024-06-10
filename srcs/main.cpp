@@ -1,9 +1,12 @@
 #include "../includes/Matrix.hpp"
+#include "../includes/ActivationFunctions.hpp"
 #include <iostream>
+#include <ostream>
 int main()
 {
-	Matrix<int> m;
-	m.showMatrix();
-	std::cout << "Hello World";
+	ActivationFunction<int>a = ActivationFunction<int>("sigmoid");
+	a.activate(5);
+
+	std::cout << "Hello World" << std::endl;
 
 }

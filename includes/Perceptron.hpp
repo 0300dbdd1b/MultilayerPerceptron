@@ -1,18 +1,24 @@
-#include "../includes/Matrix.hpp"
-#include <string>
+#if !defined(__PERCEPTRON__)
+# define __PERCEPTRON__
+# include "../includes/Matrix.hpp"
+# include "../includes/ActivationFunctions.hpp"
 
 template <typename T>
 class Perceptron
 {
 	public:
-	Matrix<T> ins;
-	Matrix<T> weights;
-	Matrix<T> outs;
+	
+	ActivationFunction<T> function;
+	Matrix<T>	ins;
+	Matrix<T>	weights;
+	Matrix<T>	outs;
 
 	Perceptron();
-	Perceptron(std::string activation_fn);
+	Perceptron(const char* activation_fn);
 
 
 	private:
 	
-}
+};
+
+#endif

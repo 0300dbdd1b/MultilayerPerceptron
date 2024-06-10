@@ -1,8 +1,7 @@
 #include "../includes/Perceptron.hpp"
-#include <string>
 
 template <typename T>
-Perceptron<T> Perceptron<T>(std::string activation_fn)
+Perceptron<T>::Perceptron(const char* activation_fn)
 {
-
+	this->function = ActivationFunction(activation_fn);
 }
