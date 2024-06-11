@@ -6,8 +6,8 @@
 #include <ostream>
 int main()
 {
-	ActivationFunction<double>a("sigmoid");
+	ActivationFunction<double>a("trelu");
 	Perceptron<double>p("sigmoid");
-	std::cout << a.activate(3, false) << std::endl;
-
+	std::cout << "A = " << a.activate(3.0, false) << std::endl;
 }
+
